@@ -69,6 +69,8 @@ A visitor whose goal is sales forecasting, billing, or another unsupported workf
 
 “Minimum setup” therefore means the choices needed to understand and intentionally try this outcome, not a long form with fewer required fields.
 
+Fewer clicks alone is not the objective. A confirmation that helps the person recognize the destination is useful friction. If it merely repeats information without improving understanding, revise its wording or placement; do not remove human control solely to make the flow appear faster.
+
 ### Priority within the planned prototype
 
 | Priority | Product capability | Reason |
