@@ -119,6 +119,14 @@ Timing is descriptive, not a race. Reading explanations, using a keyboard, or pa
 
 ## 6. Today's acceptance and next boundary
 
+### Investment decision after evidence is available
+
+- **Continue** if the selected user can understand a relevant practice outcome and the remaining uncertainty concerns refinement within this scope.
+- **Simplify** to an illustrated explanation if interaction adds effort without helping the person judge the routing decision.
+- **Reconsider the user or outcome** if evaluating value requires team participation or a different first task. Do not conceal that mismatch by adding more setup steps.
+
+These are prospective decision rules, not conclusions from a completed study. A polished prototype alone is insufficient evidence to expand the product.
+
 S001 defines the primary user, problem hypothesis, observable outcome, principal alternative, prerequisite rationale, non-goals, and fictional-data boundary. The main product decision is explainable without reading code: **ask only for decisions needed to understand and try one useful result; let unrelated setup wait.**
 
 The next session is S002: specify sample records, interaction states, cancellation, errors, recovery, and visual direction. Public repository creation and the first application foundation belong to S003. No application, test results, user study, or deployment is represented as completed by this brief.
