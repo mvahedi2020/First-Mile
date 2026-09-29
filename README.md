@@ -10,6 +10,18 @@ A new workspace administrator should be able to try one useful workflow before d
 
 Read the [product brief and decision rationale](docs/Product_Brief.md): the user, first useful outcome, alternatives, scope, and evidence needed to challenge the decision.
 
+## What this project demonstrates
+
+| Product-management skill | Evidence in the brief |
+|---|---|
+| Problem framing | A specific administrator, starting situation, and job. |
+| Prioritization | Prerequisites versus optional setup, with reasons. |
+| Product strategy | Interactive practice compared with setup-first, a blank workspace, and a simpler tour. |
+| Evaluation judgment | Completion separated from comprehension and adoption. |
+| Investment decisions | Assumptions and reasons to continue, simplify, or reconsider. |
+
+The evidence is the reasoning and stated tradeoffs. Human validation remains open.
+
 The planned experience is to choose a goal, preview a small-team template, route one bundled fictional inquiry, defer collaborator setup, and resume later. Detailed sample records and interaction rules come next.
 
 ## Product ownership
