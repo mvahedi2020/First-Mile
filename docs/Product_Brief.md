@@ -101,6 +101,8 @@ Use original fictional Northstar content. Do not copy employer materials, resume
 
 These are proposed observations, not a study conducted today. No participant count, performance target, or improvement percentage is claimed. A later comparison with setup-first would require a defined study; this brief does not establish that guided practice is faster.
 
+For a future first-attempt completion summary, report the numerator and denominator: people who reach the practice result divided by all eligible people who start that task. Show assisted completions, abandoned attempts, and retry outcomes separately. Do not remove unsuccessful starters from the denominator or count repeated attempts as new participants.
+
 Software checks will separately establish whether the committed prototype follows its stated rules. They cannot establish that real users find it useful or easy.
 
 ## 6. Today's acceptance and next boundary
