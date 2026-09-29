@@ -92,6 +92,14 @@ Use original fictional Northstar content. Do not copy employer materials, resume
 
 ## 5. What would support or change the decision?
 
+### Assumptions to challenge
+
+| Assumption | Consequence if wrong | Evidence to seek before broadening scope |
+|---|---|---|
+| One administrator can evaluate this outcome alone. | Deferring teammates might defer the value itself. | Whether a comparable decision required another person's participation, and why. |
+| A prepared inquiry resembles a useful first task. | A smooth demonstration may teach an irrelevant workflow. | The user's actual first task and the gap from the sample. |
+| A visible result is sufficient to judge the route. | Confirmation may produce confidence without understanding. | The person's explanation of where the inquiry went and what remains untested. |
+
 **First discovery question:** does an administrator need to perform a practice action to judge fit, or would a clear explanation be sufficient? Ask about the last comparable setup decision and what evidence helped them continue or stop. Treat a preference for the proposed interface as weaker evidence than a concrete account of the job. No interviews have been conducted for this project.
 
 | Question | Proposed evidence | How it affects the decision |
