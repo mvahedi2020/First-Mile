@@ -53,6 +53,8 @@ These are intended capabilities, not implemented behavior. S002 will define the 
 
 The tradeoff is deliberate: less early flexibility in exchange for a more understandable first attempt. We will not disguise a single supported journey as broad customization.
 
+A visitor whose goal is sales forecasting, billing, or another unsupported workflow should understand that this example does not evaluate their use case. Do not steer them through inquiry routing and interpret completion as proof of relevance. Broader goal coverage requires a separate scope decision.
+
 ### What must happen first, and why?
 
 | Step or input | Before the first outcome? | Product reason |
