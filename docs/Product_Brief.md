@@ -69,6 +69,17 @@ A visitor whose goal is sales forecasting, billing, or another unsupported workf
 
 “Minimum setup” therefore means the choices needed to understand and intentionally try this outcome, not a long form with fewer required fields.
 
+### Priority within the planned prototype
+
+| Priority | Product capability | Reason |
+|---|---|---|
+| Essential | Visible destination and intentional practice action | Without them, the first useful outcome cannot be understood. |
+| Essential | Optional setup can be deferred and understood later | The prototype must demonstrate its central scope decision. |
+| Supporting | Contextual explanation when a term is unfamiliar | Helps the selected first-time user judge the workflow. |
+| Deferred | Branding, additional templates, and deeper customization | They do not answer the initial product question. |
+
+If delivery capacity is constrained, reduce supporting polish before removing the outcome or deferral behavior. These priorities describe intended scope, not built features.
+
 ## 4. Boundaries and experience direction
 
 The planned scope is one guided practice outcome, a clear optional-setup choice, and an understandable return visit. The visual direction is warm white, ink, and tangerine, with a calm guided journey beside a small workspace preview. Detailed visual and state decisions belong to S002.
