@@ -10,6 +10,8 @@
 
 **User job:** “Let me see whether an inquiry can reach the right place before I ask my team to join.”
 
+**Entry situation:** the administrator is evaluating whether a new workspace fits an existing team need. They have not connected an inbox or brought in teammates. This is a chosen sample context, not evidence that all new customers arrive at the same stage.
+
 The buyer, an experienced administrator optimizing an established workspace, and a teammate handling daily requests are outside the primary journey. Keeping one user and one setup decision makes the value proposition testable.
 
 ## 2. The smallest useful outcome
