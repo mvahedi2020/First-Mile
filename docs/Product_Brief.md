@@ -48,6 +48,7 @@ These are intended capabilities, not implemented behavior. S002 will define the 
 |---|---|---|---|
 | Complete setup before allowing practice | The user encounters all configuration choices before acting. | Invitations and unfamiliar settings delay the first result; more completion does not establish understanding. | Principal alternative; do not use for this bounded practice journey. |
 | Start with a blank workspace | Experienced users have flexibility from the beginning. | A first-time administrator has to invent both the setup and a meaningful trial. | Defer; it serves a different starting user. |
+| Offer an illustrated walkthrough only | Lower build and maintenance effort; can explain the sequence. | Does not reveal how a person makes the routing choice or recognizes the result after acting. | Retain as the simpler fallback if interaction does not improve the product question we can answer. |
 | Guided practice with a prepared template | Makes one outcome reachable with few decisions and a visible explanation. | The template can hide real complexity or feel irrelevant to a different workflow. | Choose for the prototype; disclose practice scope and show the destination before confirmation. |
 
 The tradeoff is deliberate: less early flexibility in exchange for a more understandable first attempt. We will not disguise a single supported journey as broad customization.
