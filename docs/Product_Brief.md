@@ -105,6 +105,8 @@ For a future first-attempt completion summary, report the numerator and denomina
 
 Software checks will separately establish whether the committed prototype follows its stated rules. They cannot establish that real users find it useful or easy.
 
+Timing is descriptive, not a race. Reading explanations, using a keyboard, or pausing to understand the result is normal user behavior. Report comprehension and assistance alongside time; do not call a faster but misunderstood journey an improvement. Exact accessibility acceptance checks belong to the later experience verification session.
+
 ## 6. Today's acceptance and next boundary
 
 S001 defines the primary user, problem hypothesis, observable outcome, principal alternative, prerequisite rationale, non-goals, and fictional-data boundary. The main product decision is explainable without reading code: **ask only for decisions needed to understand and try one useful result; let unrelated setup wait.**
