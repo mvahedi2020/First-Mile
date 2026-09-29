@@ -40,6 +40,8 @@ These are intended capabilities, not implemented behavior. S002 will define the 
 
 ## 3. Decision: first useful outcome before complete setup
 
+**Commercial hypothesis:** allowing an administrator to evaluate a useful workflow before involving teammates may reduce the effort needed to decide whether to continue evaluating the product. The potential beneficiary is the team considering the product. Purchase intent, willingness to pay, and reduced onboarding cost remain unknown; this prototype will not measure them through simulated activity.
+
 **Working direction:** a guided practice journey using a prepared template, followed by optional setup. This follows the authorized First Mile plan. The detailed rationale below is the current product recommendation, open to Mo's review; it is not presented as a separately observed customer preference.
 
 | Approach | Benefit | Cost or risk | Decision |
