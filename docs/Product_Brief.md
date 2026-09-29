@@ -22,6 +22,12 @@ The administrator deliberately routes **one bundled fictional inquiry to its int
 
 A completed checklist, visited screen, or selected template alone is not this outcome. The result must make the connection between the user's goal, chosen setup, and destination visible. Completing practice does not mean the workspace is ready for real customers.
 
+| Evidence level | What it would establish | What it would not establish |
+|---|---|---|
+| Practice action completed | The sample inquiry reached the intended sample queue. | The person understood the destination. |
+| Result understood | The person correctly explained the destination and practice boundary. | Their team adopted the product. |
+| Real adoption | Requires separately obtained evidence of actual ongoing use. | Cannot be inferred from this fictional demonstration. |
+
 The intended journey is:
 
 1. Choose the supported goal: try routing a customer inquiry.
