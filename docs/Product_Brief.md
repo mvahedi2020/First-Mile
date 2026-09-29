@@ -92,6 +92,8 @@ Use original fictional Northstar content. Do not copy employer materials, resume
 
 ## 5. What would support or change the decision?
 
+**First discovery question:** does an administrator need to perform a practice action to judge fit, or would a clear explanation be sufficient? Ask about the last comparable setup decision and what evidence helped them continue or stop. Treat a preference for the proposed interface as weaker evidence than a concrete account of the job. No interviews have been conducted for this project.
+
 | Question | Proposed evidence | How it affects the decision |
 |---|---|---|
 | Can a first-time administrator reach the practice outcome without help? | In a separately authorized formative study, observe completion and record assistance. Start timing at the first actionable goal screen; stop when the routing result is visible. Report comprehension separately. | Repeated stalls before the result would justify simplifying or explaining the prerequisite causing them. |
