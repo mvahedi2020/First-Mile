@@ -14,6 +14,8 @@
 
 The buyer, an experienced administrator optimizing an established workspace, and a teammate handling daily requests are outside the primary journey. Keeping one user and one setup decision makes the value proposition testable.
 
+The administrator can decide whether the practice workflow is understandable and relevant. That does not establish purchase authority or permission to connect a real customer system. “Administrator” describes the scenario role; it does not imply implemented access controls.
+
 ## 2. The smallest useful outcome
 
 The administrator deliberately routes **one bundled fictional inquiry to its intended sample queue**, then can identify the destination and explain that the action was practice only.
