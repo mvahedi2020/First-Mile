@@ -18,6 +18,7 @@ export function App() {
   const [preview, setPreview] = useState<Preview | null>(null)
   const [notice, setNotice] = useState(boot.returned ? 'Welcome back. Your last confirmed practice is restored.' : 'Your practice starts here. Nothing has been routed.')
   const titleRef = useRef<HTMLHeadingElement>(null)
+  const openerRef = useRef<HTMLElement | null>(null)
   const focusHeading = () => requestAnimationFrame(() => titleRef.current?.focus())
   const write = (next: Journey, message: string) => {
     stateRef.current = next; setState(next)
@@ -37,7 +38,7 @@ export function App() {
     window.addEventListener('storage', receive)
     return () => window.removeEventListener('storage', receive)
   }, [])
-  const open = (action: Action) => { if (can(stateRef.current, action)) setPreview({ action, revision: stateRef.current.revision }) }
+  const open = (action: Action) => { if (can(stateRef.current, action)) { openerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; setPreview({ action, revision: stateRef.current.revision }) } }
   const commit = () => {
     if (!preview) return
     let current = stateRef.current
@@ -58,14 +59,14 @@ export function App() {
     write(next, messages[preview.action])
   }
   const select = (goal: 'routing' | 'other') => write(chooseGoal(stateRef.current, goal), goal === 'routing' ? 'Inquiry routing selected. Preview the small-team template next.' : 'This prototype cannot evaluate forecasting or billing. Choose inquiry routing to explore the supported sample.')
-  const cancel = () => { setPreview(null); setNotice('Preview cancelled. Confirmed practice is unchanged.') }
+  const cancel = () => { setPreview(null); setNotice('Preview cancelled. Confirmed practice is unchanged.'); requestAnimationFrame(() => openerRef.current?.focus()) }
   const step = state.routed ? 3 : state.setup ? 2 : state.goal === 'routing' ? 1 : 0
   const heading = persistence === 'invalid' ? 'Let’s recover your practice.' : state.routed ? 'A useful first outcome.' : state.setup ? 'Try one real decision.' : state.goal === 'routing' ? 'A small team. A clear route.' : state.goal === 'other' ? 'Your goal deserves a different example.' : 'Find value before finishing setup.'
   return <>
     <a className="skip-link" href="#journey">Skip to practice</a>
     <header className="topbar"><a href={import.meta.env.BASE_URL} className="brand" aria-label="First Mile home"><span className="brand-mark" aria-hidden="true">F</span>First Mile<span className="brand-sub">by Northstar</span></a><span className="practice-tag">Fictional practice · No external actions</span></header>
     <main>
-      <div className="intro"><p className="eyebrow">A little setup. One useful outcome.</p><span className="storage-indicator">{persistence === 'saved' ? 'Saved in this browser' : persistence === 'temporary' ? 'Temporary practice' : 'Recovery needed'}</span></div>
+      <div className="intro"><p className="eyebrow">A little setup. One useful outcome.</p><span className="storage-indicator">{persistence === 'saved' ? state.revision === 0 ? 'Browser storage ready' : 'Saved in this browser' : persistence === 'temporary' ? 'Temporary practice' : 'Recovery needed'}</span></div>
       <div className="layout">
         <section id="journey" className="journey" aria-labelledby="journey-title">
           <nav aria-label="Practice progress"><ol className="steps">{['Choose a goal', 'Preview setup', 'Try the route', 'Your outcome'].map((label, i) => <li key={label} aria-current={step === i ? 'step' : undefined} className={i < step ? 'done' : i === step ? 'current' : ''}><span aria-hidden="true">{i < step ? '✓' : i + 1}</span>{label}</li>)}</ol></nav>
