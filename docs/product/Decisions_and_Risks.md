@@ -23,4 +23,4 @@ The software evidence establishes committed behavior only. It cannot establish c
 
 ## Release and future evidence
 
-Independent review, public source, hosted demo parity, and profile routing must be checked by the main delivery chat. Human research and Mo's personal product review remain unperformed unless explicitly recorded after they occur. The September 28 brief's future tense remains historical; current capability claims belong to this folder and the current README.
+Independent source/browser review and hosted-file parity passed; the public [profile](https://github.com/mvahedi2020) links the released case study, PRD, walkthrough and demo. See [Validation](Validation.md) for the recorded release evidence. Human research and Mo's personal product review remain unperformed unless explicitly recorded after they occur. The September 28 brief's future tense remains historical; current capability claims belong to this folder and the current README.

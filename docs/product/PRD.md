@@ -36,4 +36,4 @@ Continue if the relevant prepared task and destination are understood. Simplify 
 
 ## Ownership
 
-Mo Vahedi owns product direction, prioritization, scope and evaluation decisions. AI assists implementation and software verification. Material implementation choices are recommendations within the authorized scope; Mo's personal review, comprehension, and human validation are not claimed. Public publication and live parity remain release gates until actually performed.
+Mo Vahedi owns product direction, prioritization, scope and evaluation decisions. AI assists implementation and software verification. Material implementation choices are recommendations within the authorized scope; Mo's personal review, comprehension, and human validation are not claimed. Public deployment and live parity evidence are recorded in [Validation](Validation.md).

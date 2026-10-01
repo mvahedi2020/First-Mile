@@ -1,6 +1,6 @@
 # First Mile: value before complete setup
 
-**Product decision:** let a new administrator understand and try one inquiry route before asking for team participation or complete setup. **Status:** complete bounded local prototype, September 30, 2026; publication verification pending. **Ownership:** Mo Vahedi, Product / Program Management; AI-assisted implementation and software verification. No manual-coding, customer research, or commercial-outcome claim.
+**Product decision:** let a new administrator understand and try one inquiry route before asking for team participation or complete setup. **Status:** published bounded prototype; initial public release verified September 30, 2026. **Ownership:** Mo Vahedi, Product / Program Management; AI-assisted implementation and software verification. No manual-coding, customer research, or commercial-outcome claim.
 
 ## Why this problem
 
