@@ -37,11 +37,15 @@ npm run test:e2e
 ## Work-package coverage and pending release
 
 - **S002:** original sample, state/cancellation/error/recovery contract and visual direction complete as product recommendations.
-- **S003:** static entry/navigation, guarded build and CI foundation locally verified. Remote name collision check and publication belong to the main release chat and remain pending here.
+- **S003:** static entry/navigation, guarded build and CI foundation locally verified. Remote name collision check passed on September 30; public deployment verification is in progress.
 - **S004:** complete goal/template/one-inquiry routing behavior and regression evidence.
 - **S005:** optional simulation, honest deferral, return summary and duplicate-action prevention.
 - **S006:** stale confirmation prevention, cancellation, compatible refresh, invalid/unavailable storage, bounded undo and confirmed reset.
 - **S007:** local software, focus/keyboard/mobile and visual checks, coherent PM case and proposed evaluation measures. No human validation claimed.
-- **S008:** local release preparation complete; independent final review, public source/demo parity, profile route and Mo's personal product review are unperformed by this implementation agent. Do not mark the full publication work package complete from local tests alone.
+- **S008:** local release preparation complete; independent final review, public source/demo parity, profile route and Mo's personal product review are not included in the local test results above. Do not mark the full publication work package complete from local tests alone.
 
 Browser persistence is not transactional across simultaneous tabs, and no synchronization beyond compatible last stored state is promised. Human comprehension, actual time to first value, fit, optional-step understanding, and recovery usability remain proposed evaluation questions. No real invitations or routing can be inferred from simulation.
+
+## Independent release review
+
+The primary reviewer inspected the state rules, recovery implementation and desktop/mobile output, then replayed routing, collaborator deferral, return and bounded undo in a separate production browser session. The 320px outcome layout had no horizontal overflow, and the browser reported no page errors. Private-source and relative-link preflight passed across 30 tracked files and 14 local links before release. Personal comprehension and human validation remain unobserved. Public Actions/Pages and artifact/live parity are the remaining publication checks.

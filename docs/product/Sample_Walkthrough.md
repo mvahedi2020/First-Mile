@@ -21,7 +21,7 @@ Use the app at `/First-Mile/`. The primary outcome and recovery below use only b
 - **Cancel reset:** choose Reset practice, then Cancel. Confirmed progress stays intact. Confirming reset starts fresh and cannot be undone.
 - **Unsupported goal:** start fresh and select forecasting/billing/another goal. Read the explicit limit; choose the routing option to continue with the supported example.
 - **Another tab:** with a route preview open, reset this same app in a second tab on the same origin. The first preview closes and announces the change; an old confirmation cannot proceed.
-- **Invalid saved data:** the browser tests place malformed or incompatible data under `northstar.first-mile.v1`. Recovery explains the problem and keeps the rejected value until an explicitly confirmed reset. Normal users do not need browser tools for the ordinary flow.
+- **Invalid saved data:** the browser recovery test places malformed JSON under `northstar.first-mile.v1`; separate domain checks cover incompatible versions and impossible state combinations. Recovery explains the problem and keeps the rejected value until an explicitly confirmed reset. Normal users do not need browser tools for the ordinary flow.
 - **Unavailable storage:** browser tests block the storage getter and block it after applying the template. The app explains temporary practice and keeps active work; refresh may lose it.
 
 ## Access and interpretation
