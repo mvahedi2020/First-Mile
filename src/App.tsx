@@ -44,12 +44,13 @@ export function App() {
     // Re-read immediately before confirmation; another tab may have changed storage before its event arrives.
     if (persistenceRef.current === 'saved') {
       const latest = readBrowser()
-      if (latest.persistence === 'invalid' || JSON.stringify(latest.state) !== JSON.stringify(current)) {
+      if (latest.persistence === 'temporary') {
+        persistenceRef.current = 'temporary'; setPersistence('temporary')
+      } else if (latest.persistence === 'invalid' || JSON.stringify(latest.state) !== JSON.stringify(current)) {
         current = latest.state; stateRef.current = current; setState(current)
         persistenceRef.current = latest.persistence; setPersistence(latest.persistence); setPreview(null)
         setNotice('This preview is out of date. Review the current practice and open a new preview.'); focusHeading(); return
       }
-      if (latest.persistence === 'temporary') { persistenceRef.current = 'temporary'; setPersistence('temporary') }
     }
     const next = confirm(current, preview)
     if (next === current) { setPreview(null); setNotice('This preview is out of date. No action was taken.'); focusHeading(); return }
