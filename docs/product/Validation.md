@@ -34,18 +34,22 @@ npm run test:e2e
 
 `test:e2e` verifies built production output and requires port 4186 free. CI repeats these gates before Pages deployment. Screenshots are generated under ignored `test-results/`; selected review evidence is in `docs/media/`. Keyboard verification uses native controls/dialogs and checks focus and a polite status region; it is not a full screen-reader or accessibility certification.
 
-## Work-package coverage and pending release
+## Work-package coverage
 
 - **S002:** original sample, state/cancellation/error/recovery contract and visual direction complete as product recommendations.
-- **S003:** static entry/navigation, guarded build and CI foundation locally verified. Remote name collision check passed on September 30; public deployment verification is in progress.
+- **S003:** static entry/navigation, guarded build and CI foundation locally verified. Remote name collision check and public deployment verification passed on September 30.
 - **S004:** complete goal/template/one-inquiry routing behavior and regression evidence.
 - **S005:** optional simulation, honest deferral, return summary and duplicate-action prevention.
 - **S006:** stale confirmation prevention, cancellation, compatible refresh, invalid/unavailable storage, bounded undo and confirmed reset.
 - **S007:** local software, focus/keyboard/mobile and visual checks, coherent PM case and proposed evaluation measures. No human validation claimed.
-- **S008:** local release preparation complete; independent final review, public source/demo parity, profile route and Mo's personal product review are not included in the local test results above. Do not mark the full publication work package complete from local tests alone.
+- **S008:** independent source/browser review and public source/demo verification passed, as recorded below. Mo's personal product review and human comprehension remain unobserved; software checks cannot establish either.
 
 Browser persistence is not transactional across simultaneous tabs, and no synchronization beyond compatible last stored state is promised. Human comprehension, actual time to first value, fit, optional-step understanding, and recovery usability remain proposed evaluation questions. No real invitations or routing can be inferred from simulation.
 
 ## Independent release review
 
-The primary reviewer inspected the state rules, recovery implementation and desktop/mobile output, then replayed routing, collaborator deferral, return and bounded undo in a separate production browser session. The 320px outcome layout had no horizontal overflow, and the browser reported no page errors. Private-source and relative-link preflight passed across 30 tracked files and 14 local links before release. Personal comprehension and human validation remain unobserved. Public Actions/Pages and artifact/live parity are the remaining publication checks.
+The primary reviewer inspected the state rules, recovery implementation and desktop/mobile output, then replayed routing, collaborator deferral, return and bounded undo in a separate production browser session. The 320px outcome layout had no horizontal overflow, and the browser reported no page errors. Private-source and relative-link preflight passed across 30 tracked files and 14 local links before release. Personal comprehension and human validation remain unobserved. Public Actions/Pages and artifact/live parity subsequently passed, as recorded below.
+
+## Public release verification
+
+The initial public release at `4a59b4dfbad66d877d1ef8604dc95e4bea666874` passed [GitHub verification and Pages deployment](https://github.com/mvahedi2020/First-Mile/actions/runs/36826832987). Local HEAD matched GitHub main, the worktree was clean, and all 14 published files matched the local production build and the deployment artifact byte for byte. CSP and no-referrer metadata were present. The live reviewer route is [First Mile](https://mvahedi2020.github.io/First-Mile/). These are point-in-time software/publication observations from September 30, 2026, not uptime, production adoption or human-study claims.
