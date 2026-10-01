@@ -6,6 +6,8 @@ Choose a goal, preview a small-team template, deliberately route one bundled fic
 
 **Current stage:** complete bounded local prototype, September 30, 2026. Public repository and live demo verification are pending the main delivery chat. The [September 28 brief](docs/Product_Brief.md) is preserved historical framing and describes the earlier pre-implementation stage.
 
+![First Mile guided practice beside the fictional Northstar workspace](docs/media/desktop-entry.png)
+
 ## Product evidence
 
 | Reviewer question | Evidence |
