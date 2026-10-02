@@ -57,7 +57,7 @@ The initial public release at `4a59b4dfbad66d877d1ef8604dc95e4bea666874` passed 
 
 ## October 2 maintenance — unreadable storage write boundary
 
-The September 30 results and release observations above remain historical. This narrow repair was verified locally on October 2, 2026; its publication and live parity remain pending the primary delivery chat. No new human validation is claimed.
+The September 30 results and release observations above remain historical. This narrow repair was verified locally on October 2, 2026; its publication and live parity subsequently passed as recorded below. No new human validation is claimed.
 
 **Reproduction:** starting from public-release baseline `ef80785585f703c7d655117cc4fc056f48aed0b6`, an isolated production Playwright fixture seeded `{unseen-invalid`, retained a callable original storage reader, and made `getItem` throw while `setItem` still worked. Selecting the inquiry-routing goal changed the unseen saved bytes to revision-1 routing JSON. This violated the temporary in-memory promise and could erase data that had never been read. The new regression failed on that exact byte-preservation assertion before repair.
 
@@ -71,7 +71,7 @@ The September 30 results and release observations above remain historical. This 
 - Dependency audit reported 0 vulnerabilities.
 - Named `agent-browser` session `first-mile-oct2-maintenance` loaded production output, showed meaningful controls without a browser error, and repeated a read-only-failure fixture. Original `{manual-unseen` bytes remained unchanged after selecting the goal; the temporary warning remained visible. Its screenshot was inspected. This was AI-assisted browser verification, not a human usability session.
 
-Production browser checks used port 4186. The Playwright preview, named browser session, and separate manual preview were stopped after verification. No remote, push, profile, plan, or unrelated repository was changed by this maintenance agent. Publication and independent final review belong to the primary delivery chat.
+Production browser checks used port 4186. The Playwright preview, named browser session, and separate manual preview were stopped after verification. No remote, push, profile, plan, or unrelated repository was changed by this maintenance agent. The subsequent independent review and publication are recorded below.
 
 
 ### October 2 prepublication follow-up — bind reset review to storage
@@ -80,4 +80,8 @@ Primary source review found that a reset opened in temporary or invalid mode cou
 
 Reset opening now captures current raw saved bytes and readability. Confirmation compares both before any reset mutation, and uses that checked snapshot to decide whether the reset can persist. A changed record or changed readability rejects the reset, leaves current practice and bytes untouched, and requests a fresh preview. A fresh reset after readability recovers remains allowed. No other journey or styling behavior was added.
 
-**Final local checks after this follow-up:** lint/environment guard, strict types, 29 domain tests, production build and dependency audit (0 vulnerabilities) passed. All **20 production Chromium browser flows** passed: the preceding 17 plus invalid-recovery reset with a different readable record during review; temporary reset with readability recovered during review (reject, then fresh preview succeeds); and saved reset with reads becoming unavailable during review (reject without clearing active practice or stored bytes). These fixtures change storage in the same tab without a storage event to exercise the missed-event boundary. Playwright owned and stopped the port-4186 preview. Final independent review, publication and live parity remain the primary delivery chat's work.
+**Final local checks after this follow-up:** lint/environment guard, strict types, 29 domain tests, production build and dependency audit (0 vulnerabilities) passed. All **20 production Chromium browser flows** passed: the preceding 17 plus invalid-recovery reset with a different readable record during review; temporary reset with readability recovered during review (reject, then fresh preview succeeds); and saved reset with reads becoming unavailable during review (reject without clearing active practice or stored bytes). These fixtures change storage in the same tab without a storage event to exercise the missed-event boundary. Playwright owned and stopped the port-4186 preview. Subsequent independent review, publication and live parity passed as recorded below.
+
+### October 2 maintenance publication and independent review
+
+The primary reviewer inspected the final code and independently reran seven focused production-browser cases successfully; these are a subset of the20-flow suite, not seven extra unique flows. Maintenance revision `ad10cf14fc233280ecd181ae80cf598257d274ff` passed [GitHub verification and Pages deployment](https://github.com/mvahedi2020/First-Mile/actions/runs/36989685647). Its local/public heads matched and all14 local build, deployment-artifact and live files matched byte for byte. A separate live-browser fixture preserved `{live-unseen` while reads failed but writes remained possible; temporary-mode warning stayed visible, with no page/console errors. The isolated browser was closed. The profile route remains valid. Historical September30 results above are preserved separately from this maintenance evidence.

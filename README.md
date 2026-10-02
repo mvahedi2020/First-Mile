@@ -4,7 +4,7 @@
 
 Choose a goal, preview a small-team template, deliberately route one bundled fictional inquiry to Customer care, defer optional collaborator simulation, and return to the confirmed outcome. Warm white, ink, and tangerine connect the guided journey to its workspace preview.
 
-**Current stage:** published bounded prototype, September 30, 2026. Software and initial public deployment verification passed; human validation remains open. [Interactive demo](https://mvahedi2020.github.io/First-Mile/) · [Public source](https://github.com/mvahedi2020/First-Mile). The [September 28 brief](docs/Product_Brief.md) is preserved historical framing and describes the earlier pre-implementation stage.
+**Current stage:** published bounded prototype, with storage-resilience maintenance verified October 2, 2026. Initial and maintenance publication checks passed; human validation remains open. [Interactive demo](https://mvahedi2020.github.io/First-Mile/) · [Public source](https://github.com/mvahedi2020/First-Mile). The [September 28 brief](docs/Product_Brief.md) is preserved historical framing and describes the earlier pre-implementation stage.
 
 ![First Mile guided practice beside the fictional Northstar workspace](docs/media/desktop-entry.png)
 
