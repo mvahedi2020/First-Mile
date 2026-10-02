@@ -206,3 +206,51 @@ test('reads becoming blocked on goal selection preserve unknown invalid bytes', 
   await expect(page.getByRole('heading', { name: 'A small team. A clear route.' })).toBeVisible()
   await expect(page.getByText('Browser storage is unavailable.', { exact: false })).toBeVisible()
 })
+test('invalid recovery reset rejects changed raw bytes before confirmation', async ({ page }) => {
+  await page.addInitScript(k => localStorage.setItem(k, '{first-invalid'), key)
+  await page.goto('./')
+  await page.getByRole('button', { name: 'Start fresh practice' }).click()
+  const replacement = JSON.stringify({ version: 1, revision: 7, goal: 'routing', setup: true, routed: true, collaborator: 'skipped' })
+  await page.evaluate(({ k, raw }) => localStorage.setItem(k, raw), { k: key, raw: replacement })
+  await page.getByRole('button', { name: 'Reset local practice' }).click()
+  expect(await page.evaluate(k => localStorage.getItem(k), key)).toBe(replacement)
+  await expect(page.getByText('No reset was performed.', { exact: false })).toBeVisible()
+  await page.getByRole('button', { name: 'Start fresh practice' }).click()
+  await page.getByRole('button', { name: 'Reset local practice' }).click()
+  expect(JSON.parse((await page.evaluate(k => localStorage.getItem(k), key))!)).toMatchObject({ goal: null, setup: false, routed: false })
+})
+test('temporary reset rejects recovered readability until a fresh preview', async ({ page }) => {
+  await page.addInitScript(k => {
+    const originalRead = Storage.prototype.getItem
+    localStorage.setItem(k, '{read-blocked')
+    Object.defineProperty(window, '__readSaved', { value: () => originalRead.call(localStorage, k) })
+    Object.defineProperty(window, '__restoreRead', { value: () => { Storage.prototype.getItem = originalRead } })
+    Storage.prototype.getItem = () => { throw new DOMException('Read blocked', 'SecurityError') }
+  }, key)
+  await page.goto('./')
+  await page.getByRole('button', { name: 'Route a customer inquiry' }).click()
+  await page.getByRole('button', { name: 'Reset practice' }).click()
+  await page.evaluate(() => (window as unknown as { __restoreRead: () => void }).__restoreRead())
+  await page.getByRole('button', { name: 'Reset local practice' }).click()
+  expect(await page.evaluate(k => localStorage.getItem(k), key)).toBe('{read-blocked')
+  await expect(page.getByRole('heading', { name: 'A small team. A clear route.' })).toBeVisible()
+  await expect(page.getByText('No reset was performed.', { exact: false })).toBeVisible()
+  await page.getByRole('button', { name: 'Reset practice' }).click()
+  await page.getByRole('button', { name: 'Reset local practice' }).click()
+  expect(JSON.parse((await page.evaluate(k => localStorage.getItem(k), key))!)).toMatchObject({ goal: null, setup: false, routed: false })
+  await expect(page.getByText('Saved in this browser', { exact: true })).toBeVisible()
+})
+test('reset rejects reads becoming unavailable during review', async ({ page }) => {
+  await page.goto('./'); await template(page)
+  const before = await page.evaluate(k => localStorage.getItem(k), key)
+  await page.getByRole('button', { name: 'Reset practice' }).click()
+  await page.evaluate(k => {
+    const originalRead = Storage.prototype.getItem
+    Object.defineProperty(window, '__readSaved', { value: () => originalRead.call(localStorage, k) })
+    Storage.prototype.getItem = () => { throw new DOMException('Read blocked', 'SecurityError') }
+  }, key)
+  await page.getByRole('button', { name: 'Reset local practice' }).click()
+  expect(await page.evaluate(() => (window as unknown as { __readSaved: () => string }).__readSaved())).toBe(before)
+  await expect(page.getByText('Small team · applied')).toBeVisible()
+  await expect(page.getByText('No reset was performed.', { exact: false })).toBeVisible()
+})

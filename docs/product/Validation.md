@@ -72,3 +72,12 @@ The September 30 results and release observations above remain historical. This 
 - Named `agent-browser` session `first-mile-oct2-maintenance` loaded production output, showed meaningful controls without a browser error, and repeated a read-only-failure fixture. Original `{manual-unseen` bytes remained unchanged after selecting the goal; the temporary warning remained visible. Its screenshot was inspected. This was AI-assisted browser verification, not a human usability session.
 
 Production browser checks used port 4186. The Playwright preview, named browser session, and separate manual preview were stopped after verification. No remote, push, profile, plan, or unrelated repository was changed by this maintenance agent. Publication and independent final review belong to the primary delivery chat.
+
+
+### October 2 prepublication follow-up — bind reset review to storage
+
+Primary source review found that a reset opened in temporary or invalid mode could bypass normal saved-state comparison, allowing a different readable record or recovered readability to be accepted after the user had already reviewed the reset. The maintenance had not been published.
+
+Reset opening now captures current raw saved bytes and readability. Confirmation compares both before any reset mutation, and uses that checked snapshot to decide whether the reset can persist. A changed record or changed readability rejects the reset, leaves current practice and bytes untouched, and requests a fresh preview. A fresh reset after readability recovers remains allowed. No other journey or styling behavior was added.
+
+**Final local checks after this follow-up:** lint/environment guard, strict types, 29 domain tests, production build and dependency audit (0 vulnerabilities) passed. All **20 production Chromium browser flows** passed: the preceding 17 plus invalid-recovery reset with a different readable record during review; temporary reset with readability recovered during review (reject, then fresh preview succeeds); and saved reset with reads becoming unavailable during review (reject without clearing active practice or stored bytes). These fixtures change storage in the same tab without a storage event to exercise the missed-event boundary. Playwright owned and stopped the port-4186 preview. Final independent review, publication and live parity remain the primary delivery chat's work.

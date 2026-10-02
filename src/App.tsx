@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { ConfirmDialog } from './ConfirmDialog'
 import { can, chooseGoal, confirm, initial, load, parse, sample, save, skip, STORAGE_KEY, type Action, type Journey, type Preview, type Persistence } from './journey'
+type ResetStorage = { readable: boolean; raw: string | null }
+function readResetStorage(): ResetStorage {
+  try { return { readable: true, raw: window.localStorage.getItem(STORAGE_KEY) } }
+  catch { return { readable: false, raw: null } }
+}
 function readBrowser() { try { return load(window.localStorage) } catch { return { state: initial(), persistence: 'temporary' as const, returned: false } } }
 const copy: Record<Action, { title: string; confirm: string; description: string }> = {
   template: { title: 'Use this practice template?', confirm: 'Use practice template', description: 'Apply the Small team template to this browser’s fictional Northstar workspace. It adds an Intake queue and a Customer care destination. No inquiry moves yet.' },
@@ -19,9 +24,16 @@ export function App() {
   const [notice, setNotice] = useState(boot.returned ? 'Welcome back. Your last confirmed practice is restored.' : 'Your practice starts here. Nothing has been routed.')
   const titleRef = useRef<HTMLHeadingElement>(null)
   const openerRef = useRef<HTMLElement | null>(null)
+  const resetStorageRef = useRef<ResetStorage | null>(null)
   const focusHeading = () => requestAnimationFrame(() => titleRef.current?.focus())
   const write = (next: Journey, message: string, explicitReset = false) => {
-    const latest = readBrowser()
+    const resetStorage = explicitReset ? readResetStorage() : null
+    if (explicitReset && (!resetStorageRef.current || JSON.stringify(resetStorage) !== JSON.stringify(resetStorageRef.current))) {
+      setPreview(null); setNotice('Saved data or storage availability changed during review. No reset was performed. Open a fresh reset preview.'); focusHeading(); return
+    }
+    const latest = resetStorage
+      ? resetStorage.readable ? load({ getItem: () => resetStorage.raw }) : { state: initial(), persistence: 'temporary' as const, returned: false }
+      : readBrowser()
     // Never overwrite bytes we cannot read. Temporary work also cannot silently
     // replace an older saved journey when reads recover; that needs explicit reset.
     const temporary = latest.persistence === 'temporary' || (persistenceRef.current === 'temporary' && !explicitReset)
@@ -50,7 +62,7 @@ export function App() {
     window.addEventListener('storage', receive)
     return () => window.removeEventListener('storage', receive)
   }, [])
-  const open = (action: Action) => { if (can(stateRef.current, action)) { openerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; setPreview({ action, revision: stateRef.current.revision }) } }
+  const open = (action: Action) => { if (can(stateRef.current, action)) { openerRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; resetStorageRef.current = action === 'reset' ? readResetStorage() : null; setPreview({ action, revision: stateRef.current.revision }) } }
   const commit = () => {
     if (!preview) return
     let current = stateRef.current
