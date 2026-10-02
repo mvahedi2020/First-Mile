@@ -53,3 +53,22 @@ The primary reviewer inspected the state rules, recovery implementation and desk
 ## Public release verification
 
 The initial public release at `4a59b4dfbad66d877d1ef8604dc95e4bea666874` passed [GitHub verification and Pages deployment](https://github.com/mvahedi2020/First-Mile/actions/runs/36826832987). Local HEAD matched GitHub main, the worktree was clean, and all 14 published files matched the local production build and the deployment artifact byte for byte. CSP and no-referrer metadata were present. The live reviewer route is [First Mile](https://mvahedi2020.github.io/First-Mile/). These are point-in-time software/publication observations from September 30, 2026, not uptime, production adoption or human-study claims.
+
+
+## October 2 maintenance — unreadable storage write boundary
+
+The September 30 results and release observations above remain historical. This narrow repair was verified locally on October 2, 2026; its publication and live parity remain pending the primary delivery chat. No new human validation is claimed.
+
+**Reproduction:** starting from public-release baseline `ef80785585f703c7d655117cc4fc056f48aed0b6`, an isolated production Playwright fixture seeded `{unseen-invalid`, retained a callable original storage reader, and made `getItem` throw while `setItem` still worked. Selecting the inquiry-routing goal changed the unseen saved bytes to revision-1 routing JSON. This violated the temporary in-memory promise and could erase data that had never been read. The new regression failed on that exact byte-preservation assertion before repair.
+
+**Repair:** every durable mutation now checks current readability. A failed read keeps the action in memory without attempting a write, including explicit reset. Temporary work does not silently replace an older saved journey when reads recover. An explicitly confirmed reset may replace readable saved data and resume persistence. The temporary warning and reset preview explain this boundary. Normal invalid-data reset, revision/content stale guards, and return behavior remain covered by the existing suite. Direct mutations also reject newly invalid or divergent readable saved state.
+
+**Actual October 2 checks:**
+
+- Lint/environment guard, strict types, and production build passed.
+- 29 domain tests passed in 1 file; no domain behavior was broadened.
+- 17 full production Chromium browser flows passed: the previous 14 plus 3 regressions for unreadable-from-entry bytes across goal/template/route/reset; read failure after setup, deferral, temporary reset and explicit readable reset; and reads becoming blocked during direct goal selection.
+- Dependency audit reported 0 vulnerabilities.
+- Named `agent-browser` session `first-mile-oct2-maintenance` loaded production output, showed meaningful controls without a browser error, and repeated a read-only-failure fixture. Original `{manual-unseen` bytes remained unchanged after selecting the goal; the temporary warning remained visible. Its screenshot was inspected. This was AI-assisted browser verification, not a human usability session.
+
+Production browser checks used port 4186. The Playwright preview, named browser session, and separate manual preview were stopped after verification. No remote, push, profile, plan, or unrelated repository was changed by this maintenance agent. Publication and independent final review belong to the primary delivery chat.
