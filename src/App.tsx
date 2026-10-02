@@ -20,10 +20,22 @@ export function App() {
   const titleRef = useRef<HTMLHeadingElement>(null)
   const openerRef = useRef<HTMLElement | null>(null)
   const focusHeading = () => requestAnimationFrame(() => titleRef.current?.focus())
-  const write = (next: Journey, message: string) => {
+  const write = (next: Journey, message: string, explicitReset = false) => {
+    const latest = readBrowser()
+    // Never overwrite bytes we cannot read. Temporary work also cannot silently
+    // replace an older saved journey when reads recover; that needs explicit reset.
+    const temporary = latest.persistence === 'temporary' || (persistenceRef.current === 'temporary' && !explicitReset)
+    if (!temporary && !explicitReset && (latest.persistence === 'invalid' || JSON.stringify(latest.state) !== JSON.stringify(stateRef.current))) {
+      stateRef.current = latest.state; setState(latest.state)
+      persistenceRef.current = latest.persistence; setPersistence(latest.persistence)
+      setNotice('Saved practice changed. No action was taken. Review the current practice before continuing.')
+      setPreview(null); focusHeading(); return
+    }
     stateRef.current = next; setState(next)
     let saved = false
-    try { saved = save(window.localStorage, next) } catch { /* Browser privacy mode may prevent even accessing storage. */ }
+    if (!temporary) {
+      try { saved = save(window.localStorage, next) } catch { /* Storage access may become unavailable after the read. */ }
+    }
     const mode = saved ? 'saved' : 'temporary'
     persistenceRef.current = mode; setPersistence(mode); setNotice(message); setPreview(null); focusHeading()
   }
@@ -56,7 +68,7 @@ export function App() {
     const next = confirm(current, preview)
     if (next === current) { setPreview(null); setNotice('This preview is out of date. No action was taken.'); focusHeading(); return }
     const messages: Record<Action, string> = { template: 'Practice template applied. NS-104 remains in Intake.', route: 'NS-104 routed to Customer care. Practice only; nothing was sent externally.', collaborator: 'Mina added in simulation only. No invitation sent.', undo: 'Route undone. NS-104 is back in Intake; optional collaborator state cleared.', reset: 'Local practice reset. Choose a goal to begin again.' }
-    write(next, messages[preview.action])
+    write(next, messages[preview.action], preview.action === 'reset')
   }
   const select = (goal: 'routing' | 'other') => write(chooseGoal(stateRef.current, goal), goal === 'routing' ? 'Inquiry routing selected. Preview the small-team template next.' : 'This prototype cannot evaluate forecasting or billing. Choose inquiry routing to explore the supported sample.')
   const cancel = () => { setPreview(null); setNotice('Preview cancelled. Confirmed practice is unchanged.'); requestAnimationFrame(() => openerRef.current?.focus()) }
@@ -72,7 +84,7 @@ export function App() {
           <nav aria-label="Practice progress"><ol className="steps">{['Choose a goal', 'Preview setup', 'Try the route', 'Your outcome'].map((label, i) => <li key={label} aria-current={step === i ? 'step' : undefined} className={i < step ? 'done' : i === step ? 'current' : ''}><span aria-hidden="true">{i < step ? '✓' : i + 1}</span>{label}</li>)}</ol></nav>
           <p className="eyebrow step-label">{state.routed ? 'Practice outcome' : `Step ${step + 1} of 4`}</p>
           <h1 ref={titleRef} id="journey-title" tabIndex={-1}>{heading}</h1>
-          {persistence === 'temporary' && <div className="warning" role="status">Browser storage is unavailable. You can keep practicing here, but refresh or closing this tab may lose progress.</div>}
+          {persistence === 'temporary' && <div className="warning" role="status">Browser storage is unavailable. This practice stays temporary, and refresh or closing this tab may lose it. Existing saved data is preserved. Reset affects only this tab while storage cannot be read; once reads work again, an explicit reset can replace the saved practice.</div>}
           {persistence === 'invalid' ? <><p>Your saved practice is unreadable or incompatible. It has not been silently replaced. Start fresh to replace it with a clean sample.</p><button onClick={() => open('reset')}>Start fresh practice</button></> : <>
           {!state.setup && state.goal !== 'routing' && <>
             <p className="lede">Try routing one fictional inquiry before you bring in your team. See where it goes, then decide what to do next.</p>
@@ -91,6 +103,6 @@ export function App() {
       <section className="principle"><span className="mini-label">The product decision</span><p>Ask for what helps you understand the first outcome.<br /><strong>Let the rest of setup wait.</strong></p><a href="docs/product/Case_Study.md">Read the product case →</a></section>
     </main>
     <footer><span>Original Northstar sample · Product direction: Mo Vahedi · AI-assisted implementation & verification</span><a href="docs/product/Sample_Walkthrough.md">Reviewer walkthrough</a></footer>
-    {preview && <ConfirmDialog title={copy[preview.action].title} confirmLabel={copy[preview.action].confirm} onConfirm={commit} onCancel={cancel}><p>{copy[preview.action].description}</p>{(preview.action === 'route' || preview.action === 'template') && <div className="route-strip"><span>Intake</span><span aria-hidden="true">→</span><strong>Customer care</strong></div>}{preview.action === 'route' && <p className="helper">Reason: the bundled inquiry’s topic is workspace help.</p>}</ConfirmDialog>}
+    {preview && <ConfirmDialog title={copy[preview.action].title} confirmLabel={copy[preview.action].confirm} onConfirm={commit} onCancel={cancel}><p>{preview.action === 'reset' && persistence === 'temporary' ? 'Reset the current temporary practice. While storage cannot be read, existing saved data stays untouched. If reads are available again, confirming replaces saved practice with a fresh sample. There is no undo for reset.' : copy[preview.action].description}</p>{(preview.action === 'route' || preview.action === 'template') && <div className="route-strip"><span>Intake</span><span aria-hidden="true">→</span><strong>Customer care</strong></div>}{preview.action === 'route' && <p className="helper">Reason: the bundled inquiry’s topic is workspace help.</p>}</ConfirmDialog>}
   </>
 }
