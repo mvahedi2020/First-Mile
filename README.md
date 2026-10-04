@@ -21,6 +21,10 @@ The one supported goal is inquiry routing. Unsupported goals receive an explicit
 
 All records and people are fictional. No sign-in, invitation, message, real routing, production integration, external API, AI inference, or tracking is performed. The application needs no runtime credentials or external service. Compatible progress is saved only in this browser. Invalid data requires confirmed recovery; unavailable storage is explained as temporary practice. Cross-tab state replaces confirmed progress; no transactional multiuser system is claimed.
 
+## Product ownership
+
+Mo Vahedi owns product direction, prioritization, scope, experience requirements and evaluation decisions. AI assists implementation and software verification. This portfolio demonstrates product judgment and does not claim Mo manually wrote application code. Software checks do not establish human comprehension, adoption, customer research or commercial outcomes. Proposed human evaluation and investment rules are documented separately from actual checks.
+
 ## Run and verify
 
 Node 22.12+ is required (CI uses Node 24).
@@ -39,6 +43,3 @@ npm run test:e2e
 
 Browser verification starts its own production preview on port 4186; stop any existing dev/preview process before running it. `npm run preview` serves built output manually. CI verifies lint, types, domain tests, production build, dependency audit and production browser flows before Pages upload/deployment. Production builds add CSP and no-referrer metadata and include the product documents. Generated output, environment files, browser traces and runtime folders are excluded from Git. There is no supported runtime environment-variable configuration.
 
-## Product ownership
-
-Mo Vahedi owns product direction, prioritization, scope, experience requirements and evaluation decisions. AI assists implementation and software verification. This portfolio demonstrates product judgment and does not claim Mo manually wrote application code. Software checks do not establish human comprehension, adoption, customer research, commercial outcomes, or Mo's personal review. Proposed human evaluation and investment rules are documented separately from actual checks.

@@ -28,7 +28,7 @@ See [Validation](Validation.md) for exact automated checks and visual review evi
 
 In separately authorized formative evaluation, observe first-attempt completion, assistance and abandonment with every eligible starter in the denominator. Time begins at the first actionable goal screen and ends at the visible result. Ask people to identify Customer care and explain that nothing was sent externally. On return, ask what remains optional and whether skip means complete. Observe cancellation and recovery after a deliberate mistake. No participants, timing result, target improvement, adoption metric or measured business outcome is claimed.
 
-Continue if the task is relevant and people understand the route and boundary. Simplify to an illustrated explanation if interaction adds effort without helping the decision. Reconsider the user or first outcome if team participation or a different task is essential. Mo's personal review and human validation remain open.
+Continue only if the task is relevant and people understand the route and boundary. Simplify to an illustrated explanation if interaction adds effort without helping the decision. Reconsider the user or first outcome if team participation or a different task is essential. No human evaluation has been conducted.
 
 ## Reviewer route
 
