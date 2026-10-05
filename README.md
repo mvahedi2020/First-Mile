@@ -8,6 +8,8 @@ Choose a goal, preview a small-team template, deliberately route one bundled fic
 
 ![First Mile guided practice beside the fictional Northstar workspace](docs/media/desktop-entry.png)
 
+Product tradeoff: one prepared practice limits flexibility while deferring team setup until a useful outcome is understood. The next investment depends on informed workspace evaluation compared with an illustrated explanation. See the [case study](docs/product/Case_Study.md) for the proposed comparison and investment criteria.
+
 ## Product evidence
 
 | Reviewer question | Evidence |

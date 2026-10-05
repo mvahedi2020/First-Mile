@@ -20,7 +20,7 @@ Collaborator setup is optional after the outcome. Its simulation never sends an 
 
 Setup-first exposes configuration but delays the first relevant result. A blank workspace provides flexibility but requires an inexperienced user to invent both setup and trial. A simpler illustrated walkthrough remains the fallback if interaction does not improve understanding. The current choice sacrifices breadth to make one evaluation decision inspectable.
 
-Local persistence avoids account setup and customer data. It also means the example is tied to one browser and can be lost. Invalid data receives explicit recovery instead of silent overwrite. Storage failures retain active in-memory work and warn that refresh may lose it. Other-tab changes close previews; current saved data is checked before confirmation to reject divergence even at the same revision. This is a local prototype, not a transactional collaboration system.
+Browser-local progress avoids account setup and customer data, at the cost of device dependence and possible loss. Invalid saved work requires deliberate recovery. A changed review expires instead of applying an outdated choice, and unavailable saving warns before the reviewer relies on a return visit. These controls protect the practice journey; they do not supply a shared collaboration service.
 
 ## Evidence and proposed evaluation
 
@@ -29,6 +29,10 @@ See [Validation](Validation.md) for exact automated checks and visual review evi
 In separately authorized formative evaluation, observe first-attempt completion, assistance and abandonment with every eligible starter in the denominator. Time begins at the first actionable goal screen and ends at the visible result. Ask people to identify Customer care and explain that nothing was sent externally. On return, ask what remains optional and whether skip means complete. Observe cancellation and recovery after a deliberate mistake. No participants, timing result, target improvement, adoption metric or measured business outcome is claimed.
 
 Continue only if the task is relevant and people understand the route and boundary. Simplify to an illustrated explanation if interaction adds effort without helping the decision. Reconsider the user or first outcome if team participation or a different task is essential. No human evaluation has been conducted.
+
+## Next investment decision
+
+The commercial opportunity is a faster, informed evaluation of workspace fit; requiring a teammate too soon also consumes another person's time before value is clear. Compare the guided practice with the simpler illustrated alternative using the same task and explanation questions. If the practice improves completion but creates the belief that a live inquiry was sent, revise the boundary before expansion. Only after relevant administrators understand the destination and optional setup should discovery test whether live setup or team collaboration is worth the added operating and onboarding cost.
 
 ## Reviewer route
 
