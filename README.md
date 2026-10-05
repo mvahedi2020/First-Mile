@@ -43,3 +43,5 @@ npm run test:e2e
 
 Browser verification starts its own production preview on port 4186; stop any existing dev/preview process before running it. `npm run preview` serves built output manually. CI verifies lint, types, domain tests, production build, dependency audit and production browser flows before Pages upload/deployment. Production builds add CSP and no-referrer metadata and include the product documents. Generated output, environment files, browser traces and runtime folders are excluded from Git. There is no supported runtime environment-variable configuration.
 
+
+Read the [product documents](https://mvahedi2020.github.io/First-Mile/docs/index.html) in the styled reading guide. Canonical Markdown remains in `docs/`.
