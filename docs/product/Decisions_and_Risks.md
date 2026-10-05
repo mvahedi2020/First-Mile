@@ -12,7 +12,7 @@ September 30, 2026 · Recommendations within the authorized First Mile brief.
 | Revision plus full saved-state comparison | Another tab should not silently confirm a stale suggestion. | No transactional cross-tab write lock or distributed collaboration; latest compatible stored state wins. |
 | Bounded Undo route | Correct a deliberate local routing attempt within a clear promise. | Clears optional state dependent on that attempt. Reset cannot be undone. |
 | Invalid data requires explicit reset | Avoid silently replacing an unreadable practice. | No migration/export of incompatible states; the app intentionally starts over only with confirmation. |
-| Temporary mode retains current state | Storage failure should not erase the active practice. | A refresh can lose it; the UI says so. If later saves succeed, persistence resumes. |
+| Temporary mode retains current state | Storage failure should not erase the active practice. | A refresh can lose it; the UI says so. Once storage works again, a fresh confirmed reset discards temporary progress, replaces the readable saved practice, and resumes persistence. |
 | Warm journey beside workspace | Connect a decision to the visible destination and progress. | Two columns become one on narrow screens; the workspace remains available below. |
 
 ## Alternatives and scope boundary
