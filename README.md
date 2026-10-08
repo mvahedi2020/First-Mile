@@ -1,6 +1,8 @@
 # First Mile
 
-**Try one useful workflow before finishing setup.** An original Northstar product-management prototype for a first-time B2B workspace administrator.
+Try routing a fictional customer question before completing team setup. See where it goes and decide whether the workspace fits your needs. All records in this demo are fictional.
+
+**Try it:** Choose the inquiry-routing goal, preview the template, and route the fictional question to its practice destination. [Open the demo](https://mvahedi2020.github.io/First-Mile/) · [Follow the walkthrough](docs/product/Sample_Walkthrough.md).
 
 Choose a goal, preview a small-team template, deliberately route one bundled fictional inquiry to Customer care, defer optional collaborator simulation, and return to the confirmed outcome. Warm white, ink, and tangerine connect the guided journey to its workspace preview.
 

@@ -1,5 +1,9 @@
 # First Mile: value before complete setup
 
+Try routing a fictional customer question before completing team setup. See where it goes and decide whether the workspace fits your needs.
+
+**The product choice:** Help someone understand first value before asking them to invite teammates or finish setup. [Try the sample](https://mvahedi2020.github.io/First-Mile/) · [Follow the walkthrough](Sample_Walkthrough.md).
+
 **Product decision:** let a new administrator understand and try one inquiry route before asking for team participation or complete setup. **Status:** published bounded prototype; initial public release verified September 30, 2026. **Ownership:** Mo Vahedi, Product / Program Management; AI-assisted implementation and software verification. No manual-coding, customer research, or commercial-outcome claim.
 
 ## Why this problem
