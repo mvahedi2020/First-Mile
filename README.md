@@ -4,6 +4,8 @@ Try routing a fictional customer question before completing team setup. See wher
 
 **Try it:** Choose the inquiry-routing goal, preview the template, and route the fictional question to its practice destination. [Open the demo](https://mvahedi2020.github.io/First-Mile/) · [Follow the walkthrough](docs/product/Sample_Walkthrough.md).
 
+**Experience connection:** My work at Oracle and Mabrosi included onboarding and activation. This example applies that experience to a new fictional task: helping an administrator see a useful result before completing setup. [Read the decision to challenge](docs/product/Case_Study.md#experience-and-decision).
+
 Choose a goal, preview a small-team template, deliberately route one bundled fictional inquiry to Customer care, defer optional collaborator simulation, and return to the confirmed outcome. Warm white, ink, and tangerine connect the guided journey to its workspace preview.
 
 **Current stage:** published bounded prototype, with storage-resilience maintenance verified October 2, 2026. Initial and maintenance publication checks passed; human validation remains open. [Interactive demo](https://mvahedi2020.github.io/First-Mile/) · [Public source](https://github.com/mvahedi2020/First-Mile). The [September 28 brief](docs/Product_Brief.md) is preserved historical framing and describes the earlier pre-implementation stage.

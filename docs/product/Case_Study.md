@@ -4,6 +4,12 @@ Try routing a fictional customer question before completing team setup. See wher
 
 **The product choice:** Help someone understand first value before asking them to invite teammates or finish setup. [Try the sample](https://mvahedi2020.github.io/First-Mile/) · [Follow the walkthrough](Sample_Walkthrough.md).
 
+## Experience and decision
+
+My work at Oracle and Mabrosi included onboarding and activation. This example applies that experience to a new fictional task: helping an administrator see a useful result before completing setup. This is a separate fictional portfolio exercise; its records, rules and results do not reproduce an employer system.
+
+**Decision to challenge:** What is the smallest outcome that lets someone judge product fit? Routing one inquiry is only a useful first step if the administrator understands the destination and knows what remains optional.
+
 **Product decision:** let a new administrator understand and try one inquiry route before asking for team participation or complete setup. **Status:** published bounded prototype; initial public release verified September 30, 2026. **Ownership:** Mo Vahedi, Product / Program Management; AI-assisted implementation and software verification. No manual-coding, customer research, or commercial-outcome claim.
 
 ## Why this problem
