@@ -51,3 +51,7 @@ Browser verification starts its own production preview on port 4186; stop any ex
 
 
 Read the [product documents](https://mvahedi2020.github.io/First-Mile/docs/index.html) in the styled reading guide. Canonical Markdown remains in `docs/`.
+
+## Typography
+
+The app and document reader use **SF Pro Rounded** for body text and **Aptos Display** for headings. Fallbacks stay within the approved Aptos, Aptos Display, SF Pro, SF Pro Rounded and Calibri families; native Apple system aliases select SF Pro. Font files are not bundled. The browser selects the first installed choice and may substitute its default if none is available.
