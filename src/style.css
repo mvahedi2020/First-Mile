@@ -6,7 +6,7 @@
   background:#f1f7f8;
   font-synthesis:none;
   line-height:1.55;
-  --orange:#087e83;
+  --orange:#066c73;
   --ink:#17313d;
   --line:#d7e6e9;
   --muted:#556c77;
@@ -555,7 +555,7 @@ main {
 .sender small {
   display:block;
   font-size:11px;
-  color:#747c70;
+  color:#596752;
 }
 
 .workspace-status {
@@ -589,7 +589,7 @@ main {
   gap:10px;
   border-top:1px solid #e4e6df;
   padding-top:19px;
-  color:#747c70;
+  color:#596752;
 }
 
 .workspace-boundary p {
